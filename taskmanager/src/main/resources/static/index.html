@@ -1,31 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Task Manager</title>
-  <link rel="stylesheet" href="style.css">
+
+  <!-- Correct CSS link -->
+  <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
 </head>
-<body>
-  <div class="container">
-    <h1>Task Manager</h1>
 
-    <!-- Add Task Section -->
-    <div class="add-task">
-      <input type="text" id="title" placeholder="Task Title">
-      <input type="text" id="description" placeholder="Task Description">
-      <input type="date" id="dueDate" placeholder="Due Date">
-      <button onclick="createTask()"><i class="fa fa-plus"></i> Add Task</button>
+<body>
+  <div class="main-container">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h2>Task Manager</h2>
+      <ul>
+        <li><i class="fa fa-list"></i> Tasks</li>
+        <li><i class="fa fa-clock"></i> History</li>
+      </ul>
     </div>
 
-    <!-- Tasks List -->
-    <h2>Tasks List</h2>
-    <ul id="taskList"></ul>
+    <!-- Content -->
+    <div class="content">
 
-    <!-- Task History Section -->
-    <h2>Task History</h2>
-    <ul id="taskHistory"></ul>
+      <div class="section active">
+        <h3>Add New Task</h3>
+
+        <div class="add-task">
+          <input type="text" id="title" placeholder="Task Title" />
+          <input type="text" id="description" placeholder="Task Description" />
+          <input type="date" id="dueDate" />
+          <button onclick="createTask()">
+            <i class="fa fa-plus"></i> Add Task
+          </button>
+        </div>
+      </div>
+
+      <div class="section active">
+        <h3>Tasks List</h3>
+        <ul id="taskList"></ul>
+      </div>
+
+      <div class="section active">
+        <h3>Task History</h3>
+        <ul id="taskHistory"></ul>
+      </div>
+
+    </div>
   </div>
 
   <script src="script.js"></script>
